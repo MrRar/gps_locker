@@ -1,0 +1,1 @@
+Keep the GPS locked at all times on an Android device.
