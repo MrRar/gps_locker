@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/verticalLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="50sp"
+    android:layout_marginLeft="50sp"
+    android:layout_marginTop="50sp"
+    android:layout_marginEnd="50sp"
+    android:layout_marginRight="50sp"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20sp"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/toggleGpsBtn"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="40sp"
+        android:onClick="toggleGPS"
+        android:paddingBottom="10sp"
+        android:text="Enable GPS"
+        android:textSize="30sp" />
+
+    <Switch
+        android:id="@+id/lockGpsToggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="40sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginRight="20sp"
+        android:checked="true"
+        android:text="Lock GPS"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

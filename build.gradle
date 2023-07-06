@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+def getVersionName = { ->
+    return "0.1.0"
+}
+
+def getVersionNumber = { ->
+    def nome = getVersionName()
+    try {
+        return Integer.valueOf(nome.replace(".", ""))
+    } catch (Exception ignored) {
+        return 1
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.google.com' }
+        google()
+    }
+}
+
+
+android {
+    signingConfigs {
+        release {
+            if (System.getenv("SIGNING_KEY_ALIAS")) {
+                storeFile file(System.getenv("SIGNING_STORE_FILENAME"))
+                keyAlias System.getenv("SIGNING_KEY_ALIAS")
+                keyPassword System.getenv("SIGNING_KEY_PASSWORD")
+                storePassword System.getenv("SIGNING_STORE_PASSWORD")
+            }
+        }
+    }
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.github.mrrar.gps_lock"
+        minSdkVersion 11 // Android 3.0
+        targetSdkVersion 33 // Android 13.0
+        versionCode getVersionNumber()
+        versionName getVersionName()
+        if (System.getenv("SIGNING_KEY_ALIAS")) {
+            signingConfig signingConfigs.release
+        }
+    }
+    buildTypes {
+        debug {
+            shrinkResources true
+            minifyEnabled true
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+        }
+    }
+    productFlavors {
+    }
+    namespace 'com.github.mrrar.gps_locker'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+}
