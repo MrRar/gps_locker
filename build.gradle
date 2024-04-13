@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 def getVersionName = { ->
-    return "0.1.0"
+    return "0.1.1"
 }
 
 def getVersionNumber = { ->
@@ -44,7 +44,7 @@ android {
     }
     compileSdkVersion 33
     defaultConfig {
-        applicationId "com.github.mrrar.gps_lock"
+        applicationId "com.github.mrrar.gps_locker"
         minSdkVersion 11 // Android 3.0
         targetSdkVersion 33 // Android 13.0
         versionCode getVersionNumber()
