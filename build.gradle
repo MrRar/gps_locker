@@ -1,18 +1,5 @@
 apply plugin: 'com.android.application'
 
-def getVersionName = { ->
-    return "0.1.1"
-}
-
-def getVersionNumber = { ->
-    def nome = getVersionName()
-    try {
-        return Integer.valueOf(nome.replace(".", ""))
-    } catch (Exception ignored) {
-        return 1
-    }
-}
-
 buildscript {
     repositories {
         mavenCentral()
@@ -47,8 +34,8 @@ android {
         applicationId "com.github.mrrar.gps_locker"
         minSdkVersion 11 // Android 3.0
         targetSdkVersion 33 // Android 13.0
-        versionCode getVersionNumber()
-        versionName getVersionName()
+        versionCode 11
+        versionName "0.1.1"
         if (System.getenv("SIGNING_KEY_ALIAS")) {
             signingConfig signingConfigs.release
         }
