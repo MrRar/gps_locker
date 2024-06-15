@@ -9,6 +9,9 @@ GPS Locker is an app for Android that keeps the GPS locked at all times when act
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
      alt="Get it on F-Droid"
      height="80">](https://f-droid.org/packages/com.github.mrrar.gps_locker/)
+[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
+     alt="Get it on IzzyOnDroid"
+     height="80">](https://apt.izzysoft.de/fdroid/index/apk/com.github.mrrar.gps_locker/)
 
 Or download the latest APK from the [Releases Section](https://github.com/MrRar/gps_locker/releases/latest).
 
